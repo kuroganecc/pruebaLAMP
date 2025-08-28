@@ -913,7 +913,7 @@ function axtoken()
 
 function axtokendel(lnk)
 {	localStorage.removeItem('jwt');
-	if(lnk!=undefined || lnk!='')
+	if(lnk!=undefined && lnk!='')
 	{	location.href=lnk;
 	}
 }
