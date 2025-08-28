@@ -912,11 +912,17 @@ function axtoken()
 }
 
 function axtokendel(lnk)
-{	localStorage.removeItem('jwt');
-	if(lnk!=undefined && lnk!='')
-	{	location.href=lnk;
-	}
+{
+    if(lnk && typeof lnk === 'string' && lnk.trim() !== '') {
+        // Redirige la página solo si el enlace es válido
+        window.location.href = lnk;
+        
+        // Finaliza la ejecución de la función después de redirigir
+        return; 
+    }
 }
+
+
 
 // @elem - EFECTOS A ELEMENTOS ===========================================
 
